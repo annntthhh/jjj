@@ -1,13 +1,19 @@
+// Idea 1: Salto al campo
+document.getElementById('btnSaltarCampo').addEventListener('click', function() {
+    document.getElementById('tunel').style.transform = 'translateY(-100%)';
+});
+
+// Reloj
 let minutos = 90;
 let segundos = 0;
 const reloj = document.getElementById('reloj-partido');
-
 setInterval(() => {
     segundos++;
     if (segundos === 60) { minutos++; segundos = 0; }
     reloj.innerText = `${minutos}:${segundos < 10 ? '0' + segundos : segundos}+`;
 }, 1000);
 
+// Confeti
 function lanzarConfeti() {
     for (let i = 0; i < 50; i++) {
         const confeti = document.createElement('div');
@@ -20,6 +26,18 @@ function lanzarConfeti() {
     }
 }
 
+// Idea 4: Contador dinámico
+function animarContador(id, fin) {
+    let obj = document.getElementById(id);
+    let inicio = 0;
+    let tiempo = setInterval(() => {
+        inicio++;
+        obj.innerText = inicio;
+        if (inicio === fin) clearInterval(tiempo);
+    }, 100);
+}
+
+// Botón Principal
 const boton = document.getElementById('btnInteractivo');
 const resultado = document.getElementById('resultado');
 const fondoRayado = document.getElementById('bg');
@@ -28,9 +46,12 @@ const notificacion = document.getElementById('notificacion');
 boton.addEventListener('click', function() {
     document.body.style.animation = "flashCams 0.2s 3";
     lanzarConfeti();
-    
     resultado.classList.remove('hidden');
     boton.style.display = 'none';
+    
+    // Iniciar contadores (Idea 4)
+    animarContador("countAmor", 10);
+    animarContador("countDistancia", 0);
     
     setTimeout(() => {
         document.body.style.backgroundColor = "#edbb00"; 
@@ -41,9 +62,9 @@ boton.addEventListener('click', function() {
     setTimeout(() => { alert("¡CAMPEONES DE NUESTRO AMOR! ❤️💙"); }, 1000);
 });
 
+// VAR
 const btnVar = document.getElementById('btnVar');
 const varMensaje = document.getElementById('varMensaje');
-
 btnVar.addEventListener('click', function() {
     btnVar.innerText = "REVISANDO...";
     setTimeout(() => {
