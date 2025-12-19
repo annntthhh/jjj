@@ -4,7 +4,7 @@
     --dorado: #edbb00;
 }
 
-/* AGREGADO: Estilos del Túnel */
+/* Túnel de Vestuarios */
 #tunel {
     position: fixed;
     top: 0;
@@ -31,15 +31,16 @@
     background: white;
     color: black;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px; /* Botón más corto y estilizado */
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
+    width: auto; /* Para que no ocupe todo el ancho */
     text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: sans-serif;
 }
 
-/* TU CÓDIGO BASE DESDE AQUÍ */
+/* TU CÓDIGO BASE INTACTO */
 body {
     margin: 0;
     padding: 80px 20px;
