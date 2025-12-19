@@ -7,21 +7,18 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Arial Black', 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: var(--azul);
+    transition: background-color 1s ease;
 }
 
-/* Franjas Blaugranas puras */
 .stripe-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
     background: repeating-linear-gradient(
         90deg,
@@ -30,36 +27,38 @@ body {
         var(--grana) 20%,
         var(--grana) 40%
     );
+    transition: opacity 1s ease;
 }
 
 .card {
     background-color: #ffffff;
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     text-align: center;
     max-width: 320px;
     border: 6px solid var(--dorado);
+    position: relative;
 }
 
-h1 {
-    color: var(--azul);
-    font-size: 1.4rem;
-    margin: 0;
-}
-
-.team-name {
-    color: var(--grana);
-    font-size: 1.8rem;
-    margin: 15px 0;
-}
-
-.divider {
-    height: 4px;
+.escudo-minimalista {
     width: 60px;
-    background-color: var(--dorado);
-    margin: 10px auto;
+    height: 60px;
+    background: var(--dorado);
+    margin: -60px auto 15px auto;
+    border-radius: 0 0 30px 30px;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+.ball-icon { font-size: 30px; }
+
+h1 { color: var(--azul); font-size: 1.3rem; margin: 0; }
+.team-name { color: var(--grana); font-size: 1.8rem; margin: 10px 0; }
+.divider { height: 4px; width: 60px; background-color: var(--dorado); margin: 10px auto; }
 
 button {
     background-color: var(--azul);
@@ -69,34 +68,44 @@ button {
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
+    width: 100%;
     text-transform: uppercase;
 }
 
-button:hover {
-    background-color: var(--grana);
-}
+button:hover { background-color: var(--grana); }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 #resultado {
     margin-top: 20px;
-    animation: aparecer 0.5s ease-in;
+    animation: aparecer 0.8s ease-out forwards;
 }
 
-.score {
-    font-size: 2rem;
-    color: var(--azul);
-    font-weight: bold;
+.score { font-size: 2rem; color: var(--azul); font-weight: bold; margin-bottom: 10px; }
+
+.stats {
+    margin: 20px 0;
+    font-size: 0.85rem;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
 }
 
-.final-msg {
-    color: var(--grana);
-    font-size: 1.1rem;
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #f9f9f9;
+    color: #444;
+}
+
+.final-msg { 
+    color: var(--grana); 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    margin-top: 15px; 
 }
 
 @keyframes aparecer {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
