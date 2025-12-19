@@ -7,13 +7,14 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial Black', 'Arial', sans-serif;
+    font-family: 'Arial Black', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: var(--azul);
     transition: background-color 1s ease;
+    overflow: hidden;
 }
 
 .stripe-bg {
@@ -39,6 +40,31 @@ body {
     max-width: 320px;
     border: 6px solid var(--dorado);
     position: relative;
+    overflow: hidden; /* Importante para el brillo */
+}
+
+/* Efecto Brillo de Trofeo */
+.card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(237, 187, 0, 0.2),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: brilloTrofeo 4s infinite;
+}
+
+@keyframes brilloTrofeo {
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
 }
 
 .escudo-minimalista {
@@ -51,7 +77,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2;
 }
 
 .ball-icon { font-size: 30px; }
@@ -70,6 +97,8 @@ button {
     cursor: pointer;
     width: 100%;
     text-transform: uppercase;
+    position: relative;
+    z-index: 3;
 }
 
 button:hover { background-color: var(--grana); }
