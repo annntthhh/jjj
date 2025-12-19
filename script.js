@@ -3,16 +3,18 @@ const resultado = document.getElementById('resultado');
 const fondoRayado = document.getElementById('bg');
 
 boton.addEventListener('click', function() {
-    // Mostramos el resultado con animación
+    // 1. Mostrar el resultado
     resultado.classList.remove('hidden');
     
-    // Ocultamos el botón
+    // 2. Esconder el botón
     boton.style.display = 'none';
     
-    // Efecto de victoria: El fondo se vuelve dorado y las rayas se desvanecen un poco
-    document.body.style.backgroundColor = "#edbb00";
-    fondoRayado.style.opacity = "0.2";
+    // 3. Efecto de victoria en el fondo
+    document.body.style.backgroundColor = "#edbb00"; // Color Dorado
+    fondoRayado.style.opacity = "0.1"; // Atenuar las rayas
     
-    // Un pequeño mensaje de consola como "huevo de pascua"
-    console.log("¡Visca el Barça! ❤️💙");
+    // 4. Mensaje de alerta (Sorpresa)
+    setTimeout(() => {
+        alert("¡CAMPEONES DE NUESTRO AMOR! ❤️💙");
+    }, 500);
 });
