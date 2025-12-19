@@ -42,7 +42,7 @@ boton.addEventListener('click', function() {
         notificacion.classList.remove('hidden-notif');
     }, 600);
 
-    setTimeout(() => { alert("¡CAMPEONES DE NUESTRO AMOR! ❤️💙"); }, 1000);
+    setTimeout(() => { alert("Tamo miamor"); }, 1000);
 });
 
 const btnVar = document.getElementById('btnVar');
