@@ -1,9 +1,8 @@
-// Abrir Túnel
+// Túnel
 document.getElementById('btnSaltarCampo').addEventListener('click', function() {
     document.getElementById('tunel').style.transform = 'translateY(-100%)';
 });
 
-// TU CÓDIGO BASE INTACTO
 let minutos = 90;
 let segundos = 0;
 const reloj = document.getElementById('reloj-partido');
