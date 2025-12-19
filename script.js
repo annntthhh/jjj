@@ -1,4 +1,3 @@
-// Reloj
 let minutos = 90;
 let segundos = 0;
 const reloj = document.getElementById('reloj-partido');
@@ -9,7 +8,6 @@ setInterval(() => {
     reloj.innerText = `${minutos}:${segundos < 10 ? '0' + segundos : segundos}+`;
 }, 1000);
 
-// Confeti
 function lanzarConfeti() {
     for (let i = 0; i < 50; i++) {
         const confeti = document.createElement('div');
@@ -22,7 +20,6 @@ function lanzarConfeti() {
     }
 }
 
-// Botón Principal
 const boton = document.getElementById('btnInteractivo');
 const resultado = document.getElementById('resultado');
 const fondoRayado = document.getElementById('bg');
@@ -44,7 +41,6 @@ boton.addEventListener('click', function() {
     setTimeout(() => { alert("¡CAMPEONES DE NUESTRO AMOR! ❤️💙"); }, 1000);
 });
 
-// VAR
 const btnVar = document.getElementById('btnVar');
 const varMensaje = document.getElementById('varMensaje');
 
