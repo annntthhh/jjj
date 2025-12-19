@@ -4,21 +4,21 @@
     --dorado: #edbb00;
 }
 
-/* Idea 1: Estilos del Túnel */
 #tunel {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: black; z-index: 2000;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
 }
+
 .luz-salida {
     width: 150px; height: 150px; background: white; border-radius: 50%;
-    box-shadow: 0 0 80px white; margin-bottom: 40px; animation: latidoLuz 2s infinite;
+    box-shadow: 0 0 80px white; margin-bottom: 40px;
 }
-@keyframes latidoLuz { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } }
+
 #btnSaltarCampo {
     background: white; color: black; border: none; padding: 15px 30px;
-    font-weight: bold; border-radius: 50px; cursor: pointer; letter-spacing: 2px;
+    font-weight: bold; border-radius: 50px; cursor: pointer;
 }
 
 body {
@@ -28,33 +28,17 @@ body {
     transition: background-color 1s ease; overflow-y: auto;
 }
 
-/* Idea 2: Textura de Césped añadida a las franjas */
+/* FRANJAS ORIGINALES RECUPERADAS */
 .stripe-bg {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-    background: repeating-linear-gradient(90deg, #003a70, #003a70 20%, #8b0038 20%, #8b0038 40%);
-    background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png'); /* Sutil textura de fibras */
+    background: repeating-linear-gradient(
+        90deg,
+        var(--azul),
+        var(--azul) 20%,
+        var(--grana) 20%,
+        var(--grana) 40%
+    );
     transition: opacity 1s ease;
-}
-
-.sello-oficial {
-    border: 2px solid var(--grana); color: var(--grana);
-    padding: 5px 10px; border-radius: 5px; display: inline-block;
-    font-size: 0.7rem; font-weight: bold; text-transform: uppercase;
-    transform: rotate(-10deg); margin: 20px 0; opacity: 0.8;
-}
-
-#notificacion {
-    position: fixed; top: 20px; left: 20px; background: white;
-    border-left: 5px solid var(--grana); padding: 10px 15px;
-    border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    z-index: 100; font-size: 0.8rem;
-}
-.hidden-notif { display: none; }
-
-#reloj-partido {
-    position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.8);
-    color: #00ff00; padding: 5px 10px; font-family: 'Courier New', monospace;
-    border-radius: 5px; font-weight: bold; z-index: 10;
 }
 
 .card {
@@ -62,13 +46,6 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6); text-align: center;
     max-width: 320px; border: 6px solid var(--dorado); position: relative; margin-bottom: 60px;
 }
-
-.card::after {
-    content: ""; position: absolute; top: -50%; left: -150%; width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(237, 187, 0, 0.2), transparent);
-    transform: rotate(45deg); animation: brilloTrofeo 4s infinite;
-}
-@keyframes brilloTrofeo { 0% { left: -150%; } 50% { left: 150%; } 100% { left: 150%; } }
 
 .ballon-dor {
     margin: 20px 0; padding: 10px; background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728);
@@ -78,37 +55,28 @@ body {
 .contrato { margin-top: 25px; border: 1px dashed #ddd; padding: 15px; background: #fdfdfd; }
 .nombre-firma { font-size: 0.9rem; color: var(--grana); margin: 0; font-family: cursive; font-style: italic; }
 
-.confeti { position: fixed; width: 10px; height: 10px; z-index: 100; animation: caidaConfeti 3s linear forwards; }
-@keyframes caidaConfeti {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+.sello-oficial {
+    border: 2px solid var(--grana); color: var(--grana);
+    padding: 5px 10px; border-radius: 5px; display: inline-block;
+    font-size: 0.7rem; font-weight: bold; transform: rotate(-10deg); margin: 20px 0;
 }
 
-@keyframes flashCams { 0% { background-color: white; } 50% { background-color: var(--dorado); } 100% { background-color: var(--dorado); } }
+#reloj-partido {
+    position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.8);
+    color: #00ff00; padding: 5px 10px; font-family: monospace; border-radius: 5px; z-index: 10;
+}
 
-.progress-container { margin: 20px 0; font-size: 0.8rem; color: var(--azul); }
 .progress-bar { background: #eee; border-radius: 20px; height: 18px; width: 100%; overflow: hidden; }
 .progress-fill { background: linear-gradient(90deg, var(--azul), var(--grana)); width: 100%; height: 100%; animation: cargaBarra 3s ease-in-out; }
 @keyframes cargaBarra { from { width: 0%; } to { width: 100%; } }
 
-.escudo-minimalista {
-    width: 60px; height: 60px; background: var(--dorado); margin: -60px auto 15px auto;
-    border-radius: 0 0 30px 30px; border: 3px solid white; display: flex; justify-content: center; align-items: center; z-index: 2;
-}
-
-button { background-color: var(--azul); color: white; border: none; padding: 15px 20px; font-weight: bold; border-radius: 8px; cursor: pointer; width: 100%; text-transform: uppercase; }
-.btn-secundario { background: transparent; color: var(--azul); border: 1px solid var(--azul); padding: 8px; font-size: 0.7rem; margin-top: 15px; border-radius: 4px; width: auto; }
-
 .marquee {
-    position: fixed; bottom: 0; left: 0; width: 100%; background: var(--grana); color: white; overflow: hidden; padding: 8px 0; font-size: 0.9rem; font-weight: bold; z-index: 10;
+    position: fixed; bottom: 0; left: 0; width: 100%; background: var(--grana); color: white; padding: 8px 0; z-index: 10; overflow: hidden;
 }
 .marquee p { display: inline-block; white-space: nowrap; animation: scroll 18s linear infinite; margin: 0; }
 @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
 
 .hidden { display: none; }
-#resultado { margin-top: 20px; animation: aparecer 0.8s ease-out forwards; }
+#resultado { margin-top: 20px; }
 .score { font-size: 2rem; color: var(--azul); font-weight: bold; }
-.stats { margin: 15px 0; font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px; }
-.stat-row { display: flex; justify-content: space-between; padding: 5px 0; color: #444; }
-.final-msg { color: var(--grana); font-weight: bold; font-size: 1.1rem; margin-top: 10px; padding-bottom: 20px; }
-@keyframes aparecer { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.final-msg { color: var(--grana); font-weight: bold; margin-top: 10px; padding-bottom: 20px; }
