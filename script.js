@@ -1,3 +1,9 @@
+// AGREGADO: Función para abrir el túnel
+document.getElementById('btnSaltarCampo').addEventListener('click', function() {
+    document.getElementById('tunel').style.transform = 'translateY(-100%)';
+});
+
+// TU CÓDIGO BASE DESDE AQUÍ
 let minutos = 90;
 let segundos = 0;
 const reloj = document.getElementById('reloj-partido');
