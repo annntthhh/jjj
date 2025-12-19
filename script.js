@@ -15,14 +15,22 @@ const resultado = document.getElementById('resultado');
 const fondoRayado = document.getElementById('bg');
 
 boton.addEventListener('click', function() {
+    // Idea 3: Efecto Flash de prensa
+    document.body.style.animation = "flashCams 0.2s 3";
+    
     resultado.classList.remove('hidden');
     boton.style.display = 'none';
-    document.body.style.backgroundColor = "#edbb00"; 
-    fondoRayado.style.opacity = "0.1"; 
-    setTimeout(() => { alert("¡CAMPEONES DE NUESTRO AMOR! ❤️💙"); }, 500);
+    
+    // Cambiar color a dorado después del flash
+    setTimeout(() => {
+        document.body.style.backgroundColor = "#edbb00"; 
+        fondoRayado.style.opacity = "0.1"; 
+    }, 600);
+
+    setTimeout(() => { alert("¡CAMPEONES DE NUESTRO AMOR! ❤️💙"); }, 1000);
 });
 
-// Lógica del VAR (Idea 1)
+// VAR
 const btnVar = document.getElementById('btnVar');
 const varMensaje = document.getElementById('varMensaje');
 
