@@ -9,19 +9,32 @@ setInterval(() => {
     reloj.innerText = `${minutos}:${segundos < 10 ? '0' + segundos : segundos}+`;
 }, 1000);
 
+// IDEA 3: Función de Confeti
+function lanzarConfeti() {
+    for (let i = 0; i < 50; i++) {
+        const confeti = document.createElement('div');
+        confeti.className = 'confeti';
+        confeti.style.left = Math.random() * 100 + 'vw';
+        confeti.style.backgroundColor = Math.random() > 0.5 ? '#004d98' : '#a50044';
+        confeti.style.top = '-10px';
+        document.body.appendChild(confeti);
+        setTimeout(() => confeti.remove(), 3000);
+    }
+}
+
 // Botón Principal
 const boton = document.getElementById('btnInteractivo');
 const resultado = document.getElementById('resultado');
 const fondoRayado = document.getElementById('bg');
 
 boton.addEventListener('click', function() {
-    // Idea 3: Efecto Flash de prensa
+    // Aplicar flash y confeti
     document.body.style.animation = "flashCams 0.2s 3";
+    lanzarConfeti();
     
     resultado.classList.remove('hidden');
     boton.style.display = 'none';
     
-    // Cambiar color a dorado después del flash
     setTimeout(() => {
         document.body.style.backgroundColor = "#edbb00"; 
         fondoRayado.style.opacity = "0.1"; 
