@@ -17,7 +17,6 @@ body {
     overflow-y: auto;
 }
 
-/* Sello Oficial (Idea 1) */
 .sello-oficial {
     border: 2px solid var(--grana);
     color: var(--grana);
@@ -108,7 +107,13 @@ body {
 }
 .sello-contrato { font-size: 0.5rem; color: #999; letter-spacing: 2px; }
 .linea-firma { border-bottom: 2px solid var(--azul); width: 120px; margin: 5px auto; height: 10px; }
-.nombre-firma { font-size: 0.7rem; color: var(--grana); margin: 0; }
+.nombre-firma { 
+    font-size: 0.9rem; 
+    color: var(--grana); 
+    margin: 0; 
+    font-family: cursive; 
+    font-style: italic; 
+}
 
 .confeti {
     position: fixed;
