@@ -1,0 +1,98 @@
+:root {
+    --azul: #004d98;
+    --grana: #a50044;
+    --dorado: #edbb00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--azul);
+    overflow: hidden;
+}
+
+/* Fondo de franjas blaugranas dinámico */
+.stripe-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--azul),
+        var(--azul) 20%,
+        var(--grana) 20%,
+        var(--grana) 40%
+    );
+    opacity: 0.3;
+}
+
+.card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    max-width: 400px;
+    border-top: 8px solid var(--dorado);
+}
+
+h1 {
+    color: var(--azul);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.team-name {
+    color: var(--grana);
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--dorado);
+    margin: 20px auto;
+}
+
+button {
+    background-color: var(--azul);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--grana);
+    transform: scale(1.05);
+}
+
+.hidden { display: none; }
+
+#resultado {
+    margin-top: 25px;
+    animation: fadeIn 1s;
+}
+
+.score {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--azul);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
