@@ -74,6 +74,13 @@ body {
     100% { left: 150%; }
 }
 
+/* Animación de Flash (Idea 3) */
+@keyframes flashCams {
+    0% { background-color: white; }
+    50% { background-color: var(--dorado); }
+    100% { background-color: var(--dorado); }
+}
+
 .progress-container { margin: 20px 0; font-size: 0.8rem; color: var(--azul); }
 .progress-bar {
     background: #eee;
@@ -126,7 +133,6 @@ button {
     z-index: 3;
 }
 
-/* Estilos VAR */
 .btn-secundario {
     background: transparent;
     color: var(--azul);
@@ -140,7 +146,6 @@ button {
 }
 #varMensaje { font-size: 0.8rem; font-weight: bold; color: #28a745; margin-top: 5px; }
 
-/* Estilos Marquesina */
 .marquee {
     position: fixed;
     bottom: 0;
