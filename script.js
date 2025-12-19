@@ -38,8 +38,6 @@ boton.addEventListener('click', function() {
     setTimeout(() => {
         document.body.style.backgroundColor = "#edbb00"; 
         fondoRayado.style.opacity = "0.1"; 
-        
-        // Mostrar notificación de GOL
         notificacion.classList.remove('hidden-notif');
     }, 600);
 
