@@ -17,7 +17,6 @@ body {
     overflow: hidden;
 }
 
-/* Reloj de partido */
 #reloj-partido {
     position: fixed;
     top: 10px;
@@ -57,7 +56,6 @@ body {
     overflow: hidden;
 }
 
-/* Efecto Brillo de Trofeo */
 .card::after {
     content: "";
     position: absolute;
@@ -65,12 +63,7 @@ body {
     left: -150%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(237, 187, 0, 0.2),
-        transparent
-    );
+    background: linear-gradient(45deg, transparent, rgba(237, 187, 0, 0.2), transparent);
     transform: rotate(45deg);
     animation: brilloTrofeo 4s infinite;
 }
@@ -81,12 +74,11 @@ body {
     100% { left: 150%; }
 }
 
-/* Estilos de la Barra de progreso */
 .progress-container { margin: 20px 0; font-size: 0.8rem; color: var(--azul); }
 .progress-bar {
     background: #eee;
     border-radius: 20px;
-    height: 20px;
+    height: 18px;
     width: 100%;
     overflow: hidden;
     margin-top: 5px;
@@ -97,7 +89,7 @@ body {
     height: 100%;
     color: white;
     font-weight: bold;
-    line-height: 20px;
+    line-height: 18px;
     font-size: 10px;
     animation: cargaBarra 3s ease-in-out;
 }
@@ -120,10 +112,6 @@ body {
 
 .ball-icon { font-size: 30px; }
 
-h1 { color: var(--azul); font-size: 1.3rem; margin: 0; }
-.team-name { color: var(--grana); font-size: 1.8rem; margin: 10px 0; }
-.divider { height: 4px; width: 60px; background-color: var(--dorado); margin: 10px auto; }
-
 button {
     background-color: var(--azul);
     color: white;
@@ -138,40 +126,48 @@ button {
     z-index: 3;
 }
 
-button:hover { background-color: var(--grana); }
+/* Estilos VAR */
+.btn-secundario {
+    background: transparent;
+    color: var(--azul);
+    border: 1px solid var(--azul);
+    padding: 8px;
+    font-size: 0.7rem;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: auto;
+}
+#varMensaje { font-size: 0.8rem; font-weight: bold; color: #28a745; margin-top: 5px; }
+
+/* Estilos Marquesina */
+.marquee {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--grana);
+    color: white;
+    overflow: hidden;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.marquee p {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 18s linear infinite;
+    margin: 0;
+}
+@keyframes scroll {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
 
 .hidden { display: none; }
+#resultado { margin-top: 20px; animation: aparecer 0.8s ease-out forwards; }
+.score { font-size: 2rem; color: var(--azul); font-weight: bold; }
+.stats { margin: 15px 0; font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px; }
+.stat-row { display: flex; justify-content: space-between; padding: 5px 0; color: #444; }
+.final-msg { color: var(--grana); font-weight: bold; font-size: 1.1rem; margin-top: 10px; }
 
-#resultado {
-    margin-top: 20px;
-    animation: aparecer 0.8s ease-out forwards;
-}
-
-.score { font-size: 2rem; color: var(--azul); font-weight: bold; margin-bottom: 10px; }
-
-.stats {
-    margin: 20px 0;
-    font-size: 0.85rem;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-}
-
-.stat-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid #f9f9f9;
-    color: #444;
-}
-
-.final-msg { 
-    color: var(--grana); 
-    font-weight: bold; 
-    font-size: 1.2rem; 
-    margin-top: 15px; 
-}
-
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes aparecer { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
