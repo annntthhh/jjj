@@ -1,4 +1,3 @@
-// Túnel
 document.getElementById('btnSaltarCampo').addEventListener('click', function() {
     document.getElementById('tunel').style.transform = 'translateY(-100%)';
 });
