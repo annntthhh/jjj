@@ -74,7 +74,20 @@ body {
     100% { left: 150%; }
 }
 
-/* Animación de Flash (Idea 3) */
+/* IDEA 3: Estilos del Confeti */
+.confeti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: 100;
+    animation: caidaConfeti 3s linear forwards;
+}
+
+@keyframes caidaConfeti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
 @keyframes flashCams {
     0% { background-color: white; }
     50% { background-color: var(--dorado); }
